@@ -396,10 +396,10 @@
         ],
         "description": "FastPrinter Initialization"
     },
-    "FastReader Class": {
+    "Fast Reader Class": {
         "prefix": "fastreader",
         "body": [
-            "static class FastReader {",
+            "    static class FastReader {",
             "        final private int BUFFER_SIZE = 1 << 17;",
             "        private DataInputStream din;",
             "        private byte[] buffer;",
@@ -493,6 +493,22 @@
             "            return arr;",
             "        }",
             "",
+            "        public int[][] nextIntMatrix(int n, int m) throws IOException {",
+            "            int[][] arr = new int[n][m];",
+            "            for (int i = 0; i < n; i++) {",
+            "                arr[i] = nextIntArray(m);",
+            "            }",
+            "            return arr;",
+            "        }",
+            "",
+            "        public long[][] nextLongMatrix(int n, int m) throws IOException {",
+            "            long[][] arr = new long[n][m];",
+            "            for (int i = 0; i < n; i++) {",
+            "                arr[i] = nextLongArray(m);",
+            "            }",
+            "            return arr;",
+            "        }",
+            "",
             "        public ArrayList<Integer> nextIntList(int size) throws IOException {",
             "            ArrayList<Integer> arrayList = new ArrayList<>(size);",
             "            for (int i = 0; i < size; i++) {",
@@ -528,9 +544,9 @@
             "        }",
             "    }"
         ],
-        "description": "FastReader Class"
+        "description": "Fast Reader Class"
     },
-    "FastPrinter Class": {
+    "Fast Printer Class": {
         "prefix": "fastprinter",
         "body": [
             "static class FastPrinter {",
@@ -566,6 +582,10 @@
             "            out.println();",
             "        }",
             "",
+            "        public void println() {",
+            "            out.println();",
+            "        }",
+            "",
             "        public void println(String s) {",
             "            out.println(s);",
             "        }",
@@ -592,7 +612,7 @@
             "        }",
             "    }"
         ],
-        "description": "FastPrinter Class"
+        "description": "Fast Printer Class"
     },
     "Sieve Generation Code": {
         "prefix": "sieve",
@@ -677,5 +697,50 @@
             "    }"
         ],
         "description": "Graphs"
+    },
+    "Main Method CP": {
+        "prefix": "cpmain",
+        "body": [
+            "public static void main(String[] args) {",
+            "        try {",
+            "            long startTime = System.currentTimeMillis();",
+            "",
+            "            final FastReader fr = new FastReader();",
+            "            final FastPrinter fp = new FastPrinter();",
+            "",
+            "            long endTime = System.currentTimeMillis();",
+            "            if (System.getProperty(\"ONLINE_JUDGE\") == null) {",
+            "                fp.println(\"Time: \" + (endTime - startTime) + \" ms\");",
+            "            }",
+            "",
+            "            fp.close();",
+            "        } catch (Exception e) {",
+            "            e.printStackTrace();",
+            "        }",
+            "    }"
+        ],
+        "description": "Main Method CP"
+    },
+    "Main Method CP Buffer": {
+        "prefix": "cpmainbuffer",
+        "body": [
+            "public static void main(String[] args) {",
+            "        try {",
+            "            long startTime = System.currentTimeMillis();",
+            "            final FastPrinter fp = new FastPrinter();",
+            "            // Write code here---",
+            "",
+            "            long endTime = System.currentTimeMillis();",
+            "            if (System.getProperty(\"ONLINE_JUDGE\") == null) {",
+            "                fp.println(\"Time: \" + (endTime - startTime) + \" ms\");",
+            "            }",
+            "",
+            "            fp.close();",
+            "        } catch (Exception e) {",
+            "            e.printStackTrace();",
+            "        }",
+            "    }"
+        ],
+        "description": "Main Method CP Buffer"
     }
 }
