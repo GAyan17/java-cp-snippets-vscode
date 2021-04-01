@@ -587,7 +587,7 @@
   "Sieve Generation Code": {
     "prefix": "sieve",
     "body": [
-      "private static boolean sieve = new boolean[1_000_000 + 1];",
+      "private static boolean[] sieve = new boolean[1_000_000 + 1];",
       "",
       "private static void initializeSieve() {",
       "        Arrays.fill(sieve, true);",
